@@ -1,19 +1,43 @@
-<div class="first-currency">
-    <select name="currency1" #cur1 (change)="selectedFirstCurrency(cur1.value)">
-        <option value="34">polski złoty</option>
-        <option *ngFor="let item of allDatas; let i = index" [value]="i">{{allDatas[i].currency}}</option>
+<section class="market">
+  <section class="currency-container">
+    <h1>Sell</h1>
+    <select
+      name="currency1"
+      #cur1
+      (change)="selectedFirstCurrency(cur1.value)"
+      class="select-currency"
+    >
+      <option disabled selected>Choose currency</option>
+      <option value="34">PLN</option>
+      <option *ngFor="let item of allDatas; let i = index" [value]="i">
+        {{ allDatas[i].code }}
+      </option>
     </select>
-    <div>
-        {{currencyMid}} {{currencyCode}}
-    </div>
-    <div>
-        <input type="number" #cash (keyup)="calculate(cash.value)">
-    </div>
-    <select name="currency2" #cur2 (change)="selectedSecondCurrency(cur2.value)">
-        <option value="34">polski złoty</option>
-        <option *ngFor="let item of allDatas; let i = index" [value]="i">{{allDatas[i].currency}}</option>
+    <input
+      type="number"
+      #cash
+      (keyup)="calculate(cash.value)"
+      class="input-amount"
+      min="0"
+      placeholder="Set a value"
+    />
+  </section>
+  <section class="currency-container">
+    <h1>Buy</h1>
+    <select
+      name="currency2"
+      #cur2
+      (change)="selectedSecondCurrency(cur2.value)"
+      class="select-currency"
+    >
+      <option disabled selected>Choose currency</option>
+      <option value="34">PLN</option>
+      <option *ngFor="let item of allDatas; let i = index" [value]="i">
+        {{ allDatas[i].code }}
+      </option>
     </select>
-    <div>
-        {{currencySecondMid}} {{currencySecondCode}}
+    <div class="amount">
+      {{ amount }}
     </div>
-</div>
+  </section>
+</section>

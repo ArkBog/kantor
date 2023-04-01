@@ -6,4 +6,14 @@
     <div>
         {{currencyMid}} {{currencyCode}}
     </div>
+    <div>
+        <input type="number" #cash (keyup)="calculate(cash.value)">
+    </div>
+    <select name="currency2" #cur2 (change)="selectedSecondCurrency(cur2.value)">
+        <option value="34">polski złoty</option>
+        <option *ngFor="let item of allDatas; let i = index" [value]="i">{{allDatas[i].currency}}</option>
+    </select>
+    <div>
+        {{currencySecondMid}} {{currencySecondCode}}
+    </div>
 </div>

@@ -13,23 +13,41 @@ export class MarketComponent implements OnInit {
   currencyMid:number = 0;
   currencyCode:string = "";
 
+  currencySecondMid:number = 0;
+  currencySecondCode:string = "";
+
+  amount:number = 0;
+
   constructor(private readonly apiService: ApiService) {}
 
   ngOnInit(): void {
     this.apiData()
   }
 
+  calculate(cash:any){
+    this.amount = cash * this.currencyMid / this.currencySecondMid;
+    console.log(this.amount)
+  }
+
   selectedFirstCurrency(value:any){
     if (value === "34") {
       this.currencyMid = 1;
       this.currencyCode = "PLN"
-      console.log(this.currencyMid);
     }
     else {
       this.currencyMid = this.allDatas[value].mid;
       this.currencyCode = this.allDatas[value].code;
-      console.log(this.currencyMid);
-      console.log(typeof this.currencyMid);
+    }
+
+  }
+  selectedSecondCurrency(value:any){
+    if (value === "34") {
+      this.currencySecondMid = 1;
+      this.currencySecondCode = "PLN"
+    }
+    else {
+      this.currencySecondMid = this.allDatas[value].mid;
+      this.currencySecondCode = this.allDatas[value].code;
     }
 
   }

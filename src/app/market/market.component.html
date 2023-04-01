@@ -1,0 +1,9 @@
+<div class="first-currency">
+    <select name="currency1" #cur1 (change)="selectedFirstCurrency(cur1.value)">
+        <option value="34">polski złoty</option>
+        <option *ngFor="let item of allDatas; let i = index" [value]="i">{{allDatas[i].currency}}</option>
+    </select>
+    <div>
+        {{currencyMid}} {{currencyCode}}
+    </div>
+</div>

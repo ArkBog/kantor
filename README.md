@@ -1,5 +1,12 @@
 # AngularKantor
 
+This application simulates online currency exchange. The currency value is getting from https://api.nbp.pl/api/exchangerates/tables/a/?format=json. 
+![Example screenshot](./screenshots/1.png)
+More information soon. TODOs:
+- tabs,
+- RWD,
+- design changes. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
 ## Development server

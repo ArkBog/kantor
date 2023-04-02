@@ -17,6 +17,7 @@ export class MarketComponent implements OnInit {
   currencySecondCode:string = "";
 
   amount:number = 0;
+  amountFixed:any = 0;
 
   constructor(private readonly apiService: ApiService) {}
 
@@ -26,7 +27,8 @@ export class MarketComponent implements OnInit {
 
   calculate(cash:any){
     this.amount = cash * this.currencyMid / this.currencySecondMid;
-    console.log(this.amount)
+    this.amountFixed = this.amount.toFixed(2);
+    console.log(this.amountFixed)
   }
 
   selectedFirstCurrency(value:any){

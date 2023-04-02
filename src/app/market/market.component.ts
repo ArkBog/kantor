@@ -12,9 +12,11 @@ export class MarketComponent implements OnInit {
 
   currencyMid:number = 0;
   currencyCode:string = "";
+  currencyValue:any = "none";
 
   currencySecondMid:number = 0;
   currencySecondCode:string = "";
+  currencySecondValue:any = "none";
 
   amount:number = 0;
   amountFixed:any = 0;
@@ -28,7 +30,7 @@ export class MarketComponent implements OnInit {
   calculate(cash:any){
     this.amount = cash * this.currencyMid / this.currencySecondMid;
     this.amountFixed = this.amount.toFixed(2);
-    console.log(this.amountFixed)
+    console.log(typeof this.amountFixed);
   }
 
   selectedFirstCurrency(value:any){
@@ -40,7 +42,7 @@ export class MarketComponent implements OnInit {
       this.currencyMid = this.allDatas[value].mid;
       this.currencyCode = this.allDatas[value].code;
     }
-
+    this.currencyValue = value;
   }
   selectedSecondCurrency(value:any){
     if (value === "34") {
@@ -51,7 +53,7 @@ export class MarketComponent implements OnInit {
       this.currencySecondMid = this.allDatas[value].mid;
       this.currencySecondCode = this.allDatas[value].code;
     }
-
+    this.currencySecondValue = value;
   }
 
   apiData(){

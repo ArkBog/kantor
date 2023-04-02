@@ -4,12 +4,12 @@
     <select
       name="currency1"
       #cur1
-      (change)="selectedFirstCurrency(cur1.value)"
+      (change)="selectedFirstCurrency(cur1.value); calculate(cash.value)"
       class="select-currency"
     >
       <option disabled selected>Choose currency</option>
-      <option value="34">PLN</option>
-      <option *ngFor="let item of allDatas; let i = index" [value]="i">
+      <option value="34" [disabled]="currencyValue === '34' ? true : false">PLN</option>
+      <option *ngFor="let item of allDatas; let i = index" [value]="i" [disabled]="i == currencySecondValue ? true : false">
         {{ allDatas[i].code }}
       </option>
     </select>
@@ -27,12 +27,12 @@
     <select
       name="currency2"
       #cur2
-      (change)="selectedSecondCurrency(cur2.value)"
+      (change)="selectedSecondCurrency(cur2.value); calculate(cash.value)"
       class="select-currency"
     >
       <option disabled selected>Choose currency</option>
-      <option value="34">PLN</option>
-      <option *ngFor="let item of allDatas; let i = index" [value]="i">
+      <option value="34" [disabled]="currencyValue === '34' ? true : false">PLN</option>
+      <option *ngFor="let item of allDatas; let i = index" [value]="i" [disabled]="i == currencyValue ? true : false">
         {{ allDatas[i].code }}
       </option>
     </select>

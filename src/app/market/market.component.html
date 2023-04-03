@@ -36,8 +36,11 @@
         {{ allDatas[i].code }}
       </option>
     </select>
-    <div class="amount">
+    <div *ngIf="amountFixed != 'NaN' && amountFixed !=0; else nanBlock" class="amount">
       {{ amountFixed }}
     </div>
   </section>
 </section>
+<ng-template #nanBlock>
+
+</ng-template>

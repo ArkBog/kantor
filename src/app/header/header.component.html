@@ -1,5 +1,7 @@
 <nav>
-    <a *ngFor="let option of options; let i = index">{{options[i].name}}
+    <a *ngFor="let option of options; let i = index" class="menu-item">
+        <img [src]="option.icon" [alt]="option.name">
+        {{options[i].name}}
 
     </a>
     

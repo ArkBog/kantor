@@ -12,6 +12,6 @@ interface Option {
 })
 
 export class HeaderComponent {
-  options:Option[] = [{name:"home", icon:"['fas', 'house']"}, {name: "about us", icon:"user"}, {name: "favourites currencies", icon: "heart"}, {name: "wallet", icon: "wallet"}]
+  options:Option[] = [{name:"home", icon:"../../assets/img/house-solid.svg"}, {name: "about us", icon:"../../assets/img/users-solid.svg"}, {name: "favourites currencies", icon: "../../assets/img/heart-solid.svg"}, {name: "wallet", icon: "../../assets/img/wallet-solid.svg"}]
   
 }

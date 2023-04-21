@@ -7,4 +7,12 @@ nav{
     padding: .5rem 0;
     display: flex;
     justify-content: space-around;
+    .menu-item{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5px;
+        img{
+            width: 15px;
+        }
+    }
 }
